@@ -1,0 +1,133 @@
+/* 初始化 */
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+/* 背景渐变 */
+body{
+	background-image: linear-gradient(to right,#b2d2d2 , #37B9E9);
+}
+
+#content-list{
+	margin-bottom: 5rem;
+}
+/* 聊天列表 */
+#content-list ul li{
+	position: relative;
+	padding: .5rem 0;
+	width: 95%;
+	display: block;
+	margin:1rem auto;
+}
+/* 聊天内容 */
+#content-list ul li>span{
+	background: #FFFFFF;
+	padding: .5rem;
+	border-radius: 5px;
+	position: relative;
+	max-width: 60%;
+	display: inline-block;
+}
+/* 自己聊天气泡颜色 */
+#content-list ul li[role="me"]>span{
+	background-color: aqua;
+	margin-right: 5rem;
+}
+#content-list ul li[role="rob"]>span{
+	margin-left: 5rem;
+}
+/* 气泡三角 */
+#content-list ul li>span::after{
+	content: '';
+	position: absolute;
+	display: block;
+	top: 10px;
+	border-top:8px solid transparent;
+	border-bottom: 8px solid transparent;
+}
+/* 自己气泡三角 */
+#content-list ul li[role="me"]>span::after{
+	right: -7px;
+	border-left: 8px solid aqua;
+}
+/* 机器人气泡三角 */
+#content-list ul li[role="rob"]>span::after{
+	left: -7px;
+	border-right: 8px solid #fff;
+}
+/* 自己 */
+#content-list ul li[role="me"]{
+	text-align: right;
+	
+}
+/* 头像 */
+#content-list ul li>i{
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	display: inline-block;
+	margin: 0 .8rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+}
+#content-list ul li[role="me"]>i{
+	right: 0;
+	background-image: url(../img/1.jpeg);
+}
+#content-list ul li[role="rob"]>i{
+	left: 0;
+	background-image: url(../img/2.jpeg);
+}
+/* 机器人 */
+#content-list ul li[role="rob"]{
+	text-align: left;
+}
+/* 绝对定位发送内容div */
+#send-content{
+	position: fixed;
+	text-align: center;
+	padding: 1rem 0;
+	bottom: 0;
+	width: 100%;
+}
+/* 聊天输入框样式 */
+#send-content input{
+	border: 0;
+	border-radius: 20px;
+	background-color: #fff;
+	height:40px;
+	width: 50%;
+	padding: 0 1rem;
+	outline: none;
+}
+/* 聊天按钮样式 */
+#send-content button{
+	padding: .5rem 2rem;
+	background-color:#2db37f;
+	border:0;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #FFFFFF;
+	outline: none;
+}
+/* 音乐板块 */
+#content-list ul li[role="rob"].music span .music-right{
+	display: inline-block;
+}
+#content-list ul li[role="rob"].music span .music-right>p{
+	text-align: center;
+}
+#content-list ul li[role="rob"].music span .music-right>p:first-child{
+	padding: .5rem 1rem;
+}
+#content-list ul li[role="rob"].music a{
+	color: #000;
+} 
+#content-list ul li[role="rob"].music img{
+	border-radius: 50%;
+} 
